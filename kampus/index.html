@@ -3,22 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ana Sayfa | Kampüs Kulübü</title>
+  <meta name="description" content="Konser, tiyatro, açık hava sineması ve stand-up etkinliklerini keşfet.">
+  <title>Sahne Ajandası | Etkinlik Rehberi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><div class="brand">Kampüs Kulübü</div><nav aria-label="Ana menü"><a href="index.html" aria-current="page">Ana Sayfa</a>
-<a href="etkinlikler.html">Etkinlikler</a>
-<a href="hakkimizda.html">Hakkımızda</a></nav></header>
-<main><p class="eyebrow">BPR201 ÖĞRENCİ PROJESİ</p>
-<h1>Birlikte öğrenelim.<br>Birlikte üretelim.</h1>
-<p class="intro">Kampüs Kulübü, web geliştirmeye ilk adımını atan öğrencileri bir araya getirir. Atölyelerimizi keşfet, kendi projen için ilham bul.</p>
-<a class="button" href="etkinlikler.html">Etkinlikleri keşfet</a>
-<section class="grid" aria-label="Kulüp çalışma alanları">
-<article><p class="meta">01 / ÖĞREN</p><h2>Web temelleri</h2><p>HTML ile içeriği kur. CSS ile görünümü düzenle.</p></article>
-<article><p class="meta">02 / DENE</p><h2>Küçük projeler</h2><p>Browser içinde çalışan ilk siteni geliştir.</p></article>
-<article><p class="meta">03 / PAYLAŞ</p><h2>Birlikte gelişim</h2><p>Kodunu GitHub üzerinde paylaş ve geri bildirim al.</p></article>
-</section></main>
-<footer>BPR201 - İnternet Tabanlı Programlama / Eğitim amaçlı örnek proje</footer>
+<header class="site-header">
+  <nav class="navbar navbar-expand-md navbar-dark container" aria-label="Ana menü">
+    <a class="navbar-brand brand" href="index.html">SAHNE<span>+</span></a>
+    <button class="navbar-toggler" type="button" aria-controls="mainNavigation" aria-expanded="false" aria-label="Menüyü aç">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavigation">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link active" href="index.html" aria-current="page">Ana Sayfa</a>
+        <a class="nav-link" href="etkinlikler.html">Etkinlikler</a>
+        <a class="nav-link" href="acik-hava-sinemasi.html">Açık Hava Sineması</a>
+        <a class="nav-link" href="stand-up.html">Stand-up</a>
+        <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero-image" src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=2200&q=85" alt="Konser alanında müziğin tadını çıkaran kalabalık">
+    <div class="hero-content container">
+      <p class="eyebrow">ŞEHRİN ETKİNLİK REHBERİ</p>
+      <h1 id="hero-title">Şehrin sahnesinde<br>bir sonraki planın.</h1>
+      <p class="hero-copy">Canlı müzikten açık hava sinemasına, ajandana iyi gelecek etkinlikleri keşfet.</p>
+      <a class="btn btn-accent" href="etkinlikler.html">Etkinlikleri keşfet <span aria-hidden="true">↗</span></a>
+    </div>
+    <span class="hero-caption">Işıklar söndüğünde, hikaye başlar.</span>
+  </section>
+
+  <section class="container search-section" aria-labelledby="search-title">
+    <div class="search-heading">
+      <p class="eyebrow">AJANDANI BUL</p>
+      <h2 id="search-title">Aklında ne var?</h2>
+      <p>Etkinlik türü ya da aklındaki kelimeyi yaz; ilgili sayfaya hemen geç.</p>
+    </div>
+    <label class="visually-hidden" for="event-search">Etkinlik veya kategori ara</label>
+    <input class="form-control event-search-input" id="event-search" type="search" placeholder="Örn. konser, tiyatro, film, stand-up" autocomplete="off" aria-controls="search-results">
+    <p class="search-status" id="search-status" aria-live="polite">3 kategori listeleniyor.</p>
+    <div class="row g-3" id="search-results">
+      <div class="col-md-4 search-result" data-search="konser tiyatro canlı müzik sahne oyun dolu kadehi ters tut romeo ve juliet yarım kalan mektuplar etkinlikler">
+        <a class="search-category" href="etkinlikler.html">
+          <span class="search-category-type">KONSER · TİYATRO</span>
+          <span class="search-category-title">Canlı performanslar</span>
+          <span class="search-category-copy">Konserleri ve tiyatro oyunlarını keşfet.</span>
+          <span class="search-category-link">Etkinliklere git <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+      <div class="col-md-4 search-result" data-search="açık hava sineması sinema film 90lar 90'lar clueless the mask jurassic park gösterim perde">
+        <a class="search-category" href="acik-hava-sinemasi.html">
+          <span class="search-category-type">SİNEMA</span>
+          <span class="search-category-title">Açık hava sineması</span>
+          <span class="search-category-copy">Yıldızların altında film gösterimlerine göz at.</span>
+          <span class="search-category-link">Sinemaya git <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+      <div class="col-md-4 search-result" data-search="stand-up stand up komedi kahkaha açık mikrofon gündelik hayat komedisi haftanın en komik gecesi">
+        <a class="search-category" href="stand-up.html">
+          <span class="search-category-type">STAND-UP</span>
+          <span class="search-category-title">Kahkaha dolu gösteriler</span>
+          <span class="search-category-copy">Stand-up geceleri ve açık mikrofon buluşmaları.</span>
+          <span class="search-category-link">Gösterilere git <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </div>
+    <p class="search-empty" id="search-empty" hidden>Bu aramayla eşleşen bir kategori bulamadık. Başka bir kelime deneyebilirsin.</p>
+  </section>
+
+  <section class="container section-space" aria-labelledby="featured-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">AJANDANA NOT ET</p>
+        <h2 id="featured-title">Yaklaşan etkinlikler</h2>
+      </div>
+      <a class="text-link" href="etkinlikler.html">Tüm etkinlikler <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <article class="card event-card h-100">
+          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Dolu_Kadehi_Ters_Tut.jpg/960px-Dolu_Kadehi_Ters_Tut.jpg" class="card-img-top event-image" alt="Dolu Kadehi Ters Tut grup üyeleri" loading="lazy">
+          <div class="card-body">
+            <div class="event-meta"><span class="event-type concert">KONSER</span><span>14 Kasım 2026</span></div>
+            <h3 class="card-title">Dolu Kadehi Ters Tut</h3>
+            <p class="card-text">Dolu Kadehi Ters Tut ile sevilen şarkıların hep bir ağızdan söylendiği canlı müzik gecesi.</p>
+            <p class="event-place">Mekan bilgisi örnek içeriktir</p>
+            <a class="btn btn-ticket mt-auto" href="https://www.biletix.com/" target="_blank" rel="noopener noreferrer">Biletleri incele <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <article class="card event-card h-100">
+          <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=900&q=80" class="card-img-top event-image" alt="Perdeleri açılmış tiyatro sahnesi" loading="lazy">
+          <div class="card-body">
+            <div class="event-meta"><span class="event-type theatre">TİYATRO</span><span>21 Kasım 2026</span></div>
+            <h3 class="card-title">Romeo ve Juliet</h3>
+            <p class="card-text">İki genç aşığın zamana meydan okuyan hikayesini sahneye taşıyan klasik eser.</p>
+            <p class="event-place">Mekan bilgisi örnek içeriktir</p>
+            <a class="btn btn-ticket mt-auto" href="https://biletinial.com/" target="_blank" rel="noopener noreferrer">Biletleri incele <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <article class="card event-card h-100">
+          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Dolu_Kadehi_Ters_Tut.jpg/960px-Dolu_Kadehi_Ters_Tut.jpg" class="card-img-top event-image" alt="Dolu Kadehi Ters Tut grup üyeleri" loading="lazy">
+          <div class="card-body">
+            <div class="event-meta"><span class="event-type concert">KONSER</span><span>28 Kasım 2026</span></div>
+            <h3 class="card-title">Dolu Kadehi Ters Tut · Canlı</h3>
+            <p class="card-text">Grubun sevilen parçaları ve sahne enerjisiyle buluşacağın bir konser.</p>
+            <p class="event-place">Mekan bilgisi örnek içeriktir</p>
+            <a class="btn btn-ticket mt-auto" href="https://www.bubilet.com.tr/" target="_blank" rel="noopener noreferrer">Biletleri incele <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+    <p class="demo-note">Program, tarihler ve bilet bağlantıları örnek içeriktir. Yayına almadan önce kendi etkinlik bilgilerinizle güncelleyin.</p>
+  </section>
+</main>
+<footer class="site-footer"><div class="container d-flex flex-column flex-sm-row justify-content-between gap-2"><span>SAHNE+ · Etkinlik Rehberi</span><span>Konser, tiyatro, sinema ve stand-up ajandası.</span></div></footer>
+<script src="script.js" defer></script>
 </body>
 </html>
